@@ -2,14 +2,7 @@ import mongoose from "mongoose";
 import validator from "validator";
 import bcrypt from "bcryptjs"
 
-export interface UserType {
-  name: string
-  email: string
-  password: string
-  phone: string
-}
-
-const UserSchema = new mongoose.Schema<UserType>(
+const UserSchema = new mongoose.Schema<UserTypeModel>(
   {
     name: {
       type: String,

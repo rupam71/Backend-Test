@@ -1,20 +1,5 @@
 import mongoose from "mongoose";
 
-interface CartProductSchemaType {
-  productName: string
-  productId: mongoose.Types.ObjectId
-  buyingPrice: number
-  totalProduct: number
-}
-
-export interface CartType {
-  customerName: string
-  customerId: mongoose.Types.ObjectId
-  product: [CartProductSchemaType]
-  totalPrice: number
-  totalProductInCart: number
-}
-
 const CartProductSchema = new mongoose.Schema<CartProductSchemaType>(
   {
     productName: {

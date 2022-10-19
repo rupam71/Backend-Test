@@ -1,15 +1,5 @@
 import mongoose from "mongoose";
 
-interface ProductType {
-  name: string
-  brand: string
-  totalProduct: number
-  actualPrice: number
-  discountPercentage: number
-  sellingPrice: number
-  totalSell: number
-}
-
 const ProductSchema = new mongoose.Schema<ProductType>(
   {
     name: {

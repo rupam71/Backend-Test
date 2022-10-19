@@ -1,13 +1,5 @@
 import mongoose from "mongoose";
 
-interface SellType {
-  customerName: string
-  customerId: mongoose.Types.ObjectId
-  product: []
-  totalPrice: number
-  totalProduct: number
-}
-
 const SellSchema = new mongoose.Schema<SellType>(
   {
     customerName: {
