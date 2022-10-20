@@ -1,0 +1,23 @@
+version: "3"
+services:
+  boilerplate-api-app:
+    build: .
+    environment:
+      - MONGO_URI=mongodb://mongodb-myapp:27017/myapp
+    volumes:
+      - .:/app
+    ports:
+      - "8080:4000"
+      # which port it will work from docker : which port its commit from project
+    depends_on:
+      - mongodb-myapp
+  mongodb-myapp:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+
+# Docker init command :
+
+# docker-compose build
+# docker-compose up
