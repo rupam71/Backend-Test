@@ -1,6 +1,7 @@
 version: "3"
 services:
   boilerplate-api-app:
+    restart: on-failure
     build: .
     environment:
       - MONGO_URI=mongodb://mongodb-myapp:27017/myapp
@@ -16,8 +17,37 @@ services:
     ports:
       - "27017:27017"
 
+# Re-start Policy of (if application crash) : 
+# "no"           : default, no restart at all.
+# always         : when ever server crash, what ever reason server crash. it will start again
+# on-failure     : Only re-start if container stops with an error code.
+# unless-stopped : always re-start if developer forcibly stop it.
+# "no" policy needs double quatiation. Other are not. Because in yml no is negetive. "no" is string.
 
-# Docker init command :
+# ==========================================
+# =========== Docker Compose Cli ===========
+# ==========================================
+# Build docker compose  # docker-compose build
+# Launch container      # docker-compose up
+# Re-Build and Launch   # docker-compose up --build
+# Launch In Background  # docker-compose up --d
+# Stop all Container    # docker-compose down
+# See all open compose  # docker-compose ps
 
-# docker-compose build
-# docker-compose up
+# ==========================================
+# ================ WorkFlow ================
+# ==========================================
+# 1. Version: "3" is docker-compose version 3
+# 2. Services are different docker container
+# 3. Build: . means "look at the current directory for a docker file."
+# 4. - in yml file means array. we can use array of ports if we want.
+# 5. All services are in same network.
+# 6. To use docker-compose cli, we need to go same location (file/folder),
+#    where our docker-compose.yml file is.
+# 7. We can use other service name as refarance address host name in our actual project. 
+    # const client = redis.createClient({
+    #   host:'redis-server', // redis container name from yml fle
+    #   port:6379
+    # })
+
+
