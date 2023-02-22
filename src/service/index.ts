@@ -2,10 +2,9 @@ import { ProductTypes, ProductQuery, ProductMutation } from './product';
 import { UserTypes, UserQuery, UserMutation } from './user';
 import { CartTypes, CartQuery, CartMutation } from './cart';
 import { SellTypes, SellQuery, SellMutation } from './sell';
-import { gql } from 'apollo-server-express';
 
 
-export const typeDefs = gql`
+export const typeDefs = `#graphql
     type Query
     type Mutation
     ${ProductTypes}
