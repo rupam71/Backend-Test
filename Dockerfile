@@ -31,7 +31,10 @@ CMD ["npm","run","dev"]
 
 # docker run <image name>
 # docker exec -it <image id> <command for this image>
-# docker run -it <image name> sh // open cmd for this image
+# docker exec -it <container id> /bin/bash                  // Enter the container
+# docker run -it <image name> sh                            // open cmd for this image
+# docker logs <container id>                                // print app output logs
+# docker kill <container id>                                // Kill our running contai
 
 # ==========================================
 # ================ WorkFlow ================
